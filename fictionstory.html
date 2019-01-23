@@ -1,0 +1,347 @@
+<head>
+    <style>
+    
+    body{
+      overflow: hidden;
+    }
+    
+    #container{
+        position: absolute;
+        top: 45px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background: black;
+    }  
+    
+    #leftpane{
+        width: 56%;
+        height: 100%;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       /* background: red;*/
+    }
+    
+    #rightpane{
+        width: 44%;
+        height: 100%;
+        float: left;
+       /* background: pink;*/
+    }
+    
+    #buttons{
+        position: absolute;
+        bottom: 0px;
+        left: 56%;
+        right: 0px;
+        height: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*background: yellow;*/
+    }
+    
+    .btn{
+      margin: 40px;
+      
+    }
+    
+    #storytext{
+        position: absolute;
+        left: 56%;
+        right: 0px;
+        top: 0px;
+        bottom: 50px;
+    }
+    
+    #graphic{
+      max-height: 99%;
+      max-width: 99%;
+      width: 99%;
+    }
+    
+    #paragraph{
+      color: white;
+      font-size: 20;
+    }
+    
+    </style>
+</head>
+
+<html>
+ <table> 
+  <table style="width:100%">
+  <tr>
+    <th>
+      <title>Damieon Olivares</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <h1>Damieon Olivares</h1>
+    </th>
+    <th>
+  <ul class="nav nav-pills justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="index.html">All</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="aboutme.html">About Me</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="projects.html">Projects</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="Pythontextadventure.html">Python Text Adventure</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="resume.html">Resume</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="fictionstory.html">Working Python Text Adventure</a>
+    
+  </li>
+  </ul>
+    </th>
+  </tr>
+  </table>
+  
+  <body>
+    <div id="container">
+        <div id="leftpane">
+            <img id="graphic" src="unknown.png" />
+        </div>
+        
+        <div id="rightpane">
+            <div id="storytext">
+                <p id="paragraph">This is where the story will be ;)</p>
+                
+            </div>
+            
+            <div id="buttons">
+               <button id="button1" onclick="buttonclick(1)" type="button" class="btn btn-success">Success</button>
+               <button id="button2" onclick="buttonclick(2)" type="button" class="btn btn-success">Success</button>
+               <button id="button3" onclick="buttonclick(3)" type="button" class="btn btn-success">Success</button>
+               <button id="button4" onclick="buttonclick(4)" type="button" class="btn btn-success">Success</button>
+            </div>
+        </div>  
+          
+          
+          
+          
+    </div>
+  
+  
+  <script>
+    var graphic = document.getElementById("graphic")
+    var paragraph = document.getElementById("paragraph")
+    var button1 = document.getElementById("button1")
+    var button2 = document.getElementById("button2")
+    var button3 = document.getElementById("button3")
+    var button4 = document.getElementById("button4")
+    var state = "intro"
+    
+    function intro(){
+      paragraph.innerHTML = "You are now located in the last known Bro-Cave in antarctica and receive news that T-Series now has complete domination of every country on earth. You decide it is time to fight T-Series or die trying.  You begin leaving the Bro-Cave, but you are stopped by Dustin Longfries, an elder Bro. He offers you a gauntlet to assist you on your journey. Do you take the gaunlet? Click 'Yes' to take the generious offer Or 'NO' to decline his offer"
+      button1.innerHTML = "Yes"
+      button1.style.display = "block"
+      button2.innerHTML = "NO"
+      button2.style.display = "block"
+      button3.style.display = "none"
+      button4.style.display ="none"
+      graphic.src= "unknown.png"
+    }
+    
+    function gauntletyes(){
+      paragraph.innerHTML = "You accept his gift and begin your journey. Upon leaving the cave, you spot a hooded figure turned away from you, standing vacantly. Do you approach him? Click 'Yes' to approach him or click 'NO' to carry on your adventure."
+      button1.innerHTML = "Yes"
+      button1.style.display = "block"
+      button2.innerHTML = "NO"
+      button2.style.display = "block"
+      button3.innerHTML = "spin"
+      button3.style.display = "none"
+      button4.innerHTML = "Run"
+      button4.style.display ="none"
+      graphic.src= "brocave.jpg"
+    }
+    
+    function gauntletno(){
+      paragraph.innerHTML = "You refuse the gauntlet, and Dustin sighs and wishes you well. Upon leaving the cave, you spot a hooded figure turned away from you, standing vacantly. Do you approach him? Click 'Yes' to approach him or click 'NO' to carry on your adventure."
+      button1.innerHTML = "Yes"
+      button1.style.display = "block"
+      button2.innerHTML = "NO"
+      button2.style.display = "block"
+      button3.innerHTML = "scream"
+      button3.style.display = "none"
+      button4.innerHTML = "cry"
+      button4.style.display ="none"
+      graphic.src= "epic.jpg"
+    }
+    
+    function figuremandies1(){
+      paragraph.innerHTML = "You decide to talk to him. You try to asking him what he is doing out here in the cold.  He does not slow down or reply, and before you can react he lunges at you with a knife and kills you. GAME"
+      button1.innerHTML = "Restart"
+      button1.style.display = "block"
+      button2.innerHTML = "NO"
+      button2.style.display = "none"
+      button3.innerHTML = "scream"
+      button3.style.display = "none"
+      button4.innerHTML = "cry"
+      button4.style.display ="none"
+      graphic.src= "unknown.png"
+    }
+    function figuremandies2(){
+      paragraph.innerHTML = "You avoid talking to him and try walking away.  As soon as your back is turned, he stabs you in the back with a knife. GAME OVER"
+      button1.innerHTML = "Restart"
+      button1.style.display = "block"
+      button2.innerHTML = "NO"
+      button2.style.display = "none"
+      button3.innerHTML = "scream"
+      button3.style.display = "none"
+      button4.innerHTML = "cry"
+      button4.style.display ="none"
+      graphic.src= "unknown.png"
+    }
+    
+    function approach(){
+      paragraph.innerHTML = "He turns around, and upon seeing you he lunges at you with a knife. However you sidestep the attack and Bro-Fist him through the ground."
+      button1.innerHTML = "Epic!!! *dab* :eyes:"
+      button1.style.display = "block"
+      button2.innerHTML = "run"
+      button2.style.display = "none"
+      button3.innerHTML = "scream"
+      button3.style.display = "none"
+      button4.innerHTML = "cry"
+      button4.style.display ="none"
+      graphic.src= "epic.jpg"
+    }
+    
+    function leaveshimalone(){
+      paragraph.innerHTML = "You ignore the figure, and proceed on your quest."
+      button1.innerHTML = "Epic!!! *dab* :eyes:"
+      button1.style.display = "block"
+      button2.innerHTML = "run"
+      button2.style.display = "none"
+      button3.innerHTML = "scream"
+      button3.style.display = "none"
+      button4.innerHTML = "cry"
+      button4.style.display ="none"
+      graphic.src= "unknown.png"
+    }
+    
+    function frontdeskpersonfight(){
+      paragraph.innerHTML = "Your journey from the Bro-Cave to Youtube HQ in India lasts a week, facing many difficult geographical obstacles along the way. You finally arrive in the depressing, uniform town and head to the center where the now T-Series ridden Youtube HQ resides. You walk through the front door and make eye contact with the receptionist. He immediately stands up and begins approaching you. You think to yourself; do I risk my life and let him speak or kill him now? Slay him where he stands or hear him speak? Click 'Yes' to slay him or 'NO' to hear him speak."
+      button1.innerHTML = "slay him"
+      button1.style.display = "block"
+      button2.innerHTML = "NO"
+      button2.style.display = "block"
+      button3.innerHTML = "scream"
+      button3.style.display = "none"
+      button4.innerHTML = "cry"
+      button4.style.display ="none"
+      graphic.src= "itsgamertime.jpg"
+    }
+    
+    function dustman(){
+      paragraph.innerHTML = "You raise your fist and drop him with one punch. He crumbles to dust and you begin climbing the stairs."
+      button1.innerHTML = "Move Onward!"
+      button1.style.display = "block"
+      button2.innerHTML = "NO"
+      button2.style.display = "none"
+      button3.innerHTML = "scream"
+      button3.style.display = "none"
+      button4.innerHTML = "cry"
+      button4.style.display ="none"
+      graphic.src= "epic.jpg"
+    }
+    
+    function losefrontdesk(){
+      paragraph.innerHTML = "You stop to let him speak but he instead draws an axe and heaves it at you, striking you in your chest. GAME OVER."
+      button1.innerHTML = "Restart?"
+      button1.style.display = "block"
+      button2.innerHTML = "NO"
+      button2.style.display = "none"
+      button3.innerHTML = "scream"
+      button3.style.display = "none"
+      button4.innerHTML = "cry"
+      button4.style.display ="none"
+      graphic.src= "sans.jpg"
+    }
+    
+    function buttonclick(button){
+      if (state == "intro"){
+        if (button == "1"){
+          state = "gauntletyes"
+          gauntletyes()
+        }
+        else if (button == "2"){
+          state = "gauntletno"
+          gauntletno()
+        }
+      }
+      else if(state == "gauntletyes"){
+        if(button == "1"){
+          state = "approach"
+          approach()
+        }
+        else if (button == "2"){
+        state = "leaveshimalone"
+        leaveshimalone()
+        }
+      }
+      else if (state == "approach"){
+        if (button == "1"){
+          state = "frontdeskpersonfight"
+          frontdeskpersonfight()
+        }
+      }  
+        else if (state == "leaveshimalone"){
+        if (button == "1"){
+        state = "frontdeskpersonfight"
+        frontdeskpersonfight()
+        }
+      } 
+      else if (state == "frontdeskpersonfight"){
+        if (button == "1"){
+        state = "dustman"
+        dustman()
+        }
+        else if (button == "2"){
+        state = "losefrontdesk"
+        losefrontdesk()
+        }
+      }
+      else if(state == "gauntletno"){
+        if(button == "1"){
+        state = "figuremandies1"
+        figuremandies1()
+        }
+      else if (button == "2"){
+        state = "figuremandies2"
+        figuremandies2()
+        }
+      }
+      else if (state == "figuremandies1"){
+        if (button == "1"){
+        state = "intro"
+        intro()
+        }
+      }
+      else if (state == "figuremandies2"){
+        if (button == "1"){
+        state = "intro"
+        intro()
+        }
+      }
+      else if (state == "losefrontdesk"){
+        if (button == "1"){
+        state = "intro"
+        intro()
+        }
+      }
+  }
+    
+    intro()
+    
+  </script>  
+  </body>
+  </html>

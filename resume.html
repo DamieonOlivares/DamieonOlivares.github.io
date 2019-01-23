@@ -1,4 +1,4 @@
-<html>
+<html lang="en-us">
  <table> 
   <table style="width:100%">
   <tr>
@@ -25,7 +25,7 @@
     <a class="nav-link active" href="resume.html">Resume</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="#">Contact Me</a>
+    <a class="nav-link active" href="fictionstory.html">Working Python Text Adventure</a>
     
   </li>
   </ul>
@@ -33,4 +33,114 @@
   </tr>
   </table>
   
+<body>
+  
+    <meta charset="utf-8">
+  
+  
+  <button type="button" onclick=clkme() >Click me</button>
+    <p id="ptext">This is about to change</p>
+  
+    <button type="button" onclick=adder() >Adder</button>
+    
+    <p id="name">My name will go here</p>
+    
+    <p id="3 words">This is going to be epic</p>
+    
+    <img id="graphic" src="itsgamertime.jpg"/>
+    
+    <button type="button" id="picButton" onclick=picChange()>ACTIVATE SICKO MODE Mrs. Obama</button>
+    
+    <button type="button" id="showImg" onclick=showImg() >SHOW</button>
+    <button type="button" id="hideImg" onclick=hideImg() >HIDE</button>
+    
+    
+ <script>
+  
+  var state = "minecraft"
+  var pic = document.getElementById("graphic")
+  var button = document.getElementById("picButton")
+  
+  var button2 = document.createElement("button")
+  var buttonText = document.createTextNode("Clicker")
+  button2.appendChild(buttonText)
+  button2.setAttribute("onclick", "picChange()")
+  button2.setAttribute("id" , "bubblegum")
+  document.body.appendChild(button2)
+  
+  function hideImg(){
+    pic.style.display = "none"
+  }
+  
+  function showImg(){
+   pic.style.display = "block" 
+  }
+  
+  
+
+function picChange(){
+  
+  if (state == "minecraft"){
+    pic.src = "sans.gif"
+    button.innerHTML = "fortnite"
+    state = "fortnite"
+    }
+    
+  else if (state == "fortnite"){
+    pic.src = "itsgamertime.jpg"
+    button.innerHTML = "Benny Boi"
+    state = "gamer"
+    }
+    
+  else if (state == "gamer"){
+    pic.src = "gamertime 1.jpg"
+    button.innerHTML = "gamer"
+    state = "gamertime"
+    }
+   
+  else if (state == "gamertime"){
+    pic.src = "gamer time.jpg"
+    button.innerHTML = "gamertime"
+    state = "minecraft"
+    } 
+}
+    function clkme() {
+      var ptext = document.getElementById('ptext')
+      ptext.innerHTML = 'Monkey'
+      ptext.style.fontSize = "35px"
+      ptext.style.color = "blue"
+    }
+    
+   function adder() {
+      var x = 3 
+      var y = 4
+      var z = x + y
+      var ptext = document.getElementById('ptext')
+      ptext.innerHTML = z
+      alert("This is an alert box")
+    
+    }
+    
+    var word = "Damieon Olivares"
+    document.getElementById("name").innerHTML = word
+    
+    var word = "My" + " " + "NAME" + " " + "JEFF"
+    document.getElementById("3 words").innerHTML = word
+    
+    var w = 5
+    
+    if (w > 6){
+      document.getElementById("name").innerHTML = "Hello"
+      
+    }
+    else{
+      document.getElementById("name").innerHTML = "Bye"
+    }
+    
+  </script>
+  
+  
+ </body>
  
+ 
+ </html>
